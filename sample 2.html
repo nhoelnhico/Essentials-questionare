@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management Training Day Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- Color Palette: Energetic & Playful -->
+    <!-- No Mermaid JS was used. -->
+    <!-- No SVG was used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 1.25rem;
+            left: -0.5rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 9999px;
+            border: 2px solid #118AB2;
+            background-color: #f0f4f8;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="text-[#073B4C]">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-black text-[#073B4C] mb-2">Project Management Training</h1>
+            <p class="text-lg md:text-xl text-[#118AB2] max-w-3xl mx-auto">An intensive full-day session designed to equip managers and supervisors with actionable tools for immediate application in their daily tasks.</p>
+        </header>
+
+        <section class="mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-6xl font-black text-[#FF6B6B] mb-2">8</div>
+                    <div class="text-lg font-bold">Total Hours</div>
+                    <p class="text-sm text-gray-600">A full day of immersive learning and collaboration.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-6xl font-black text-[#FFD166] mb-2">10</div>
+                    <div class="text-lg font-bold">Core Topics</div>
+                    <p class="text-sm text-gray-600">Covering the full project lifecycle from concept to completion.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-6xl font-black text-[#06D6A0] mb-2">7</div>
+                    <div class="text-lg font-bold">Leaders</div>
+                    <p class="text-sm text-gray-600">An intimate group size for focused, high-impact training.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="mb-16">
+             <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-[#073B4C]">A Day of Discovery: Session Timeline</h2>
+                <p class="text-md text-[#118AB2] mt-2 max-w-2xl mx-auto">The training day is structured to build knowledge progressively, blending foundational theory in the morning with execution strategies in the afternoon.</p>
+            </div>
+            <div class="relative pl-8 border-l-4 border-dashed border-[#118AB2]">
+                <div class="timeline-item mb-12">
+                    <h3 class="text-xl font-bold text-[#118AB2]">Morning Session: Foundation & Planning (8:30 AM - 12:00 PM)</h3>
+                    <div class="bg-white p-6 rounded-lg shadow-md mt-2">
+                        <p class="font-semibold">Part 1: Defining the Problem</p>
+                        <p class="text-sm text-gray-700 mb-2">Focuses on understanding the bigger picture with Systems Thinking and drilling down to root causes using Problem Tree Analysis.</p>
+                        <p class="font-semibold">Part 2: Planning with People in Mind</p>
+                        <p class="text-sm text-gray-700">Introduces tools for identifying and engaging key individuals through Stakeholder Analysis and applying human-centered solutions with Design Thinking.</p>
+                    </div>
+                </div>
+                <div class="timeline-item mb-12">
+                     <h3 class="text-xl font-bold text-[#118AB2]">Mid-Day Session: The Project Blueprint (12:00 PM - 1:00 PM)</h3>
+                     <div class="bg-white p-6 rounded-lg shadow-md mt-2">
+                        <p class="font-semibold">Part 3: Structuring for Success</p>
+                        <p class="text-sm text-gray-700">Covers creating a project's strategic foundation, explaining the 'why' with a Theory of Change and the 'how' with a Logic Framework, all within the standard PM Cycle.</p>
+                    </div>
+                </div>
+                 <div class="timeline-item mb-12">
+                     <h3 class="text-xl font-bold text-[#118AB2]">Afternoon Session: Execution & People (2:00 PM - 5:00 PM)</h3>
+                     <div class="bg-white p-6 rounded-lg shadow-md mt-2">
+                        <p class="font-semibold">Part 4: Execution & Control</p>
+                        <p class="text-sm text-gray-700 mb-2">Dives into the mechanics of project execution, including scheduling, control, and the leader's role in coaching for performance.</p>
+                        <p class="font-semibold">Part 5: Managing the Human Element</p>
+                        <p class="text-sm text-gray-700">Addresses the critical skill of guiding teams through transitions with effective Change Management strategies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 items-center">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold text-center mb-4">Core Competency Areas</h2>
+                <p class="text-sm text-gray-600 text-center mb-4">The ten topics are grouped into three core areas, ensuring a balanced development of strategic, analytical, and leadership capabilities.</p>
+                <div class="chart-container">
+                    <canvas id="topicsChart"></canvas>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold text-center mb-4">Emphasis on Application</h2>
+                <p class="text-sm text-gray-600 text-center mb-4">The session is designed to be highly interactive, dedicating significant time to hands-on activities that translate theory into practical skills.</p>
+                <div class="chart-container">
+                    <canvas id="activityChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-12 py-6 border-t border-[#118AB2]/20">
+            <p class="text-lg font-bold text-[#073B4C]">Empowering Leaders, Driving Results.</p>
+            <p class="text-sm text-gray-600">This training provides the comprehensive toolkit needed to navigate complex projects and lead teams with confidence.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        function wrapLabel(label, maxLength) {
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        }
+
+        const tooltipTitleCallback = function(tooltipItems) {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+        
+        const palette = ['#118AB2', '#06D6A0', '#FFD166', '#FF6B6B', '#073B4C'];
+
+        const topicsCtx = document.getElementById('topicsChart').getContext('2d');
+        const topicsData = {
+            labels: [
+                'Strategic Frameworks',
+                'Analytical Tools',
+                wrapLabel('Leadership & People Skills', 16)
+            ],
+            datasets: [{
+                label: 'Number of Topics',
+                data: [4, 4, 2],
+                backgroundColor: palette.slice(0, 3),
+                borderColor: '#ffffff',
+                borderWidth: 2
+            }]
+        };
+        new Chart(topicsCtx, {
+            type: 'bar',
+            data: topicsData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                }
+            }
+        });
+        
+        const activityCtx = document.getElementById('activityChart').getContext('2d');
+        const activityData = {
+            labels: ['Theory & Presentation', 'Hands-on Application'],
+            datasets: [{
+                data: [55, 45],
+                backgroundColor: [palette[0], palette[3]],
+                hoverOffset: 4,
+                borderColor: '#ffffff',
+                borderWidth: 4,
+            }]
+        };
+        new Chart(activityCtx, {
+            type: 'doughnut',
+            data: activityData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    tooltip: {
+                        callbacks: {
+                           title: tooltipTitleCallback
+                        }
+                    }
+                },
+                cutout: '60%'
+            }
+        });
+    </script>
+</body>
+</html>
+
+
